@@ -1,0 +1,9 @@
+/home/dima/C_C++/CPP_course/CPP_CircularBuffer/build/Desktop-Debug/CMakeFiles/main.dir
+/home/dima/C_C++/CPP_course/CPP_CircularBuffer/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/dima/C_C++/CPP_course/CPP_CircularBuffer/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/dima/C_C++/CPP_course/CPP_CircularBuffer/build/Desktop-Debug/CircularBuffer/CMakeFiles/CircularBuffer.dir
+/home/dima/C_C++/CPP_course/CPP_CircularBuffer/build/Desktop-Debug/CircularBuffer/CMakeFiles/edit_cache.dir
+/home/dima/C_C++/CPP_course/CPP_CircularBuffer/build/Desktop-Debug/CircularBuffer/CMakeFiles/rebuild_cache.dir
+/home/dima/C_C++/CPP_course/CPP_CircularBuffer/build/Desktop-Debug/test/CMakeFiles/test.dir
+/home/dima/C_C++/CPP_course/CPP_CircularBuffer/build/Desktop-Debug/test/CMakeFiles/edit_cache.dir
+/home/dima/C_C++/CPP_course/CPP_CircularBuffer/build/Desktop-Debug/test/CMakeFiles/rebuild_cache.dir
