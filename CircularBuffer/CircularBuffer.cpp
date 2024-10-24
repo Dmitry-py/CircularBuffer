@@ -278,7 +278,7 @@ void CircularBuffer::push_back(const value_type& item) {
 	if (this->full())
 		this->buffer[this->start] = item;
 	else {
-		this->end = (this->end + 1) % this->_capacity;
+		this->end = (this->end + 1) % this->buffer_size;
 		this->buffer[this->end] = item;
 		this->count++;
 	}
@@ -293,7 +293,7 @@ void CircularBuffer::push_front(const value_type& item) {
 	if (this->full())
 		this->buffer[this->end] = item;
 	else {
-		this->start = (this->_capacity + (this->start - 1) % this->_capacity) % this->_capacity;
+		this->start = (this->buffer_size + (this->start - 1) % this->buffer_size) % this->buffer_size;
 		this->buffer[this->start] = item;
 		this->count++;
 	}
@@ -303,7 +303,7 @@ void CircularBuffer::pop_back() {
 	if (this->empty()) {
 		throw;
 	}
-	this->end = (this->_capacity + (this->end - 1) % this->_capacity) % this->_capacity;
+	this->end = (this->buffer_size + (this->end - 1) % this->buffer_size) % this->buffer_size;
 	this->count--;
 }
 
@@ -311,22 +311,28 @@ void CircularBuffer::pop_front() {
 	if (this->empty()) {
 		throw;
 	}
-	this->start = (this->start + 1) % this->_capacity;
+	this->start = (this->start + 1) % this->buffer_size;
 	this->count--;
 }
 
 // insert/erase/clear
 void CircularBuffer::insert(int pos, const value_type& item) {
+	// testing capacity
+	if (this->full()) {
+		throw std::invalid_argument("Error: circular buffer is full!");
+	}
     // testing index
 	if (pos < 0 || pos > this->count - 1 || this->empty()) {
-		throw std::invalid_argument("Error: Wrong index!");;
+		throw std::invalid_argument("Error: Wrong index!");
 	}
     // set new value
-    value_type last = item;
-    for (int i = pos; i <= count; i++) {
-        std::swap((*this)[i], last);
-    }
-    this->end = (this->end + 1) % this->_capacity;
+    this->count++;
+    for (int i = this->count - 1; i >= pos; i--) {
+		(*this)[i] = (*this)[i - 1];
+	}
+	(*this)[pos] = item;
+	
+	this->end = (this->end + 1) % this->buffer_size;
 }
 
 void CircularBuffer::erase(int first, int last) {
@@ -337,12 +343,12 @@ void CircularBuffer::erase(int first, int last) {
 		this->empty()) {
 		throw std::invalid_argument("Error: Wrong arguments!");
 	}
-    this->count -= last - first;
-    // setting elements at "nan" value
-    for (int i = first; i < count; i++) {
-        (*this)[i] = (*this)[i +  last];
+	int j = first;
+    for (int i = last; i < count; i++) {
+		(*this)[j] = (*this)[i];
 	}
-    this->end = (this->_capacity + (this->end - first + last) % this->_capacity) % this->_capacity;
+	this->count -= last - first;
+	this->end = (this->start + this->count) % this->buffer_size;
 }
 
 void CircularBuffer::clear() {

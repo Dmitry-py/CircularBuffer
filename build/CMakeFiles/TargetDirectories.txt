@@ -1,0 +1,9 @@
+/home/dmitry/CXXProjects/CircularBuffer/build/CMakeFiles/main.dir
+/home/dmitry/CXXProjects/CircularBuffer/build/CMakeFiles/edit_cache.dir
+/home/dmitry/CXXProjects/CircularBuffer/build/CMakeFiles/rebuild_cache.dir
+/home/dmitry/CXXProjects/CircularBuffer/build/CircularBuffer/CMakeFiles/CircularBuffer.dir
+/home/dmitry/CXXProjects/CircularBuffer/build/CircularBuffer/CMakeFiles/edit_cache.dir
+/home/dmitry/CXXProjects/CircularBuffer/build/CircularBuffer/CMakeFiles/rebuild_cache.dir
+/home/dmitry/CXXProjects/CircularBuffer/build/test/CMakeFiles/test.dir
+/home/dmitry/CXXProjects/CircularBuffer/build/test/CMakeFiles/edit_cache.dir
+/home/dmitry/CXXProjects/CircularBuffer/build/test/CMakeFiles/rebuild_cache.dir

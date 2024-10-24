@@ -1,1 +1,0 @@
-/usr/bin/x86_64-linux-gnu-g++ -DQT_QML_DEBUG -g CMakeFiles/test.dir/test.cpp.o -o test  -lgtest -lpthread ../CircularBuffer/libCircularBuffer.a 

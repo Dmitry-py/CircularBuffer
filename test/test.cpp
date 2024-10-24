@@ -206,7 +206,6 @@ TEST(CircularBufferTest, Erase) {
     EXPECT_EQ(cb.size(), 2);
     EXPECT_EQ(cb[0], 1);
     EXPECT_EQ(cb[1], 4);
-    cout << cb << endl;
     //EXPECT_THROW(cb.erase(2, 1), std::invalid_argument);
     //EXPECT_THROW(cb.erase(-1, 1), std::invalid_argument);
     //EXPECT_THROW(cb.erase(0, 5), std::invalid_argument);
